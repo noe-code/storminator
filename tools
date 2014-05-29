@@ -1,0 +1,6 @@
+RequireJS --> Javascript file and module loader
+Bootstrap --> Component library
+HTML5 Boilerplate --> Front-end template
+Backbone.js --> Architecture (MV*)
+Underscore.js --> Extension library
+QUnit --> Testing
