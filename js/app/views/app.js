@@ -1,9 +1,10 @@
 define([
   'jquery',
   'underscore',
-  'backbone'
+  'backbone',
+  'app/views/counter'
 
-  ], function ($, _, Backbone) {
+  ], function ($, _, Backbone, CounterView) {
       'use strict';
 
       var AppView = Backbone.View.extend({
@@ -25,8 +26,16 @@ define([
             'click #nav-about': 'onNavAbout'
           },
 
+        views: {},
+
         initialize: function() {
+          this.views['counter'] = new CounterView({
+            id: 'counter-widget',
+            className: 'counter-widget'
+          });
+
           this.$el.append(this.html);
+          this.$('#content').append(this.views['counter'].render().el);
         },
 
         onNavDash: function(){
