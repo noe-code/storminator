@@ -2,7 +2,7 @@ define([], function(){
   'use strict';
 
   var toFahrenheit = function(celsius) {
-    if (typeof(celsius) != "number") {
+    if (isNaN(parseFloat(celsius)) || !isFinite(celsius)) {
       return null;
     } else {
       return (celsius * 9 / 5) + 32;
